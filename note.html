@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .all{
+            margin-left: 90px;
+            margin-right: 90px;
+            margin-top: 40px;
+        }
+
+        .heading{
+            margin-left: 20px;
+            margin-left: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .date{
+            background-color: rgb(63, 49, 49);
+            color: chartreuse;
+            width: 100%;
+            border-radius: 10px;
+            padding: 18px;
+            border:1px solid white;
+            margin: auto;
+            margin-top: 20px;
+            transition: 0.4s;
+            display: inline-block;
+        }
+        
+        .date:hover{
+            background-color: violet;
+            
+        }
+        #date:hover{
+            background-color: palegreen;
+        }
+        #one:hover{
+            background-color: rgb(224, 61, 11);
+        }
+        #three:hover{
+            background-color: peachpuff;
+        }
+        .date:after{
+            content: "\1f447";
+            padding-left: 100%;
+        }.date:before{
+            content: "\1f447";
+        }
+
+        .notes{
+            padding: 0px 18px;
+            margin-top: 10px;
+            background-color: rgb(136, 136, 238);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+    
+        /* mobile view */
+        @media screen and (max-width: 789px) {
+            /* body{
+                display: none;
+            } */
+        
+    .all{
+        margin: 2%;
+    }
+}
+        </style>
+</head>
+<body>
+    <nav>
+      <div class="logo">
+        <img class="image" src="./IMAGES/Group 1.png" alt="LOGO" />
+        <h4>HERMON PROFI</h4>
+      </div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#">HOME</a>
+        </li>
+        <li>
+          <a href="#">ABOUT</a>
+        </li>
+        <li>
+          <a href="#">NOTES</a>
+        </li>
+        <li>
+          <a href="assignment.html">ASSIGNMENTS</a>
+        </li>
+        <li>
+          <a href="assignment.html">LESSONS</a>
+        </li>
+
+      </ul>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+        <div class="all">
+        <div class="heading">
+            <h2>this is the heading for my work</h2>
+            <p>waight for us</p> 
+        </div>
+
+        <button class="date" id="one">
+            DAY 1
+            <br />
+            MONDAY 27th JULY, 2020
+        </button>
+            <div class="notes">
+                <p> trying very haard to arrangr all in order</p>
+            </div>
+
+            
+            <button class="date" id="two">
+            DAY 2
+            <br />
+            TUESDAY 28th JULYy, 2020
+            </button>
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptate ipsum odit expedita quasi perferendis fugit at iste aut ullam.</p>
+            </div>
+            
+            <button class="date" id="three">
+            DAY 3
+            <br />
+            WEDNESDAY 29th july, 2020
+            </button>
+            <div class="notes">
+                <p>we are perfect now and responding to concerns</p>
+            </div>
+                
+
+        
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("date");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }  
+    </script> 
+    <script src="./app.js"></script>
+</body>
+</html>
